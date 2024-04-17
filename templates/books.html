@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h1>Search Books</h1>
+  <form action="/books" method="GET">
+    <input type="text" id="search" name="search" placeholder="Search" value="{{model.search}}">
+    <input type="submit" value="Search Books">
+  </form>
+
+  {% for book in model.books %}
+  <div key="book.id">
+    <div class="row book-card">
+      <div class="col-md-6">
+        <h2>{{ book.title }}</h2>
+        <ul>
+          <li>Author: {{ ', '.join(book.authors) }}</li>
+          <li>Publisher: {{ book.publisher }} ({{book.year[:4]}}) {{' '.join(book.categories)}}</li>
+          <li>ISBN: {{book.ISBN10}}</li>
+          <li><a href="https://www.amazon.com/s?k={{book.keywords}}&i=stripbooks">Amazon</a></li>
+          <li><a href="https://www.google.com/search?tbm=shop&q={{book.keywords}}">Google Shopping</a></li>
+        </ul>
+        <p>{{ book.description }}</p>
+      </div>
+      <div class="col-md-6">
+        <img class="book-image" src="{{book.image}}" alt="Book cover image" />
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  function searchBooks() {
+    fetch(`/api/books?search=${this.search}`)
+      .then(response => response.json())
+      .then(json => {
+        this.books = json;
+      })
+  }
+</script>
+{% endblock %}

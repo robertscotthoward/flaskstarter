@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Flask Example{% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Flask Example</h1>
+  <ul>
+    <li><a href="/books">Search Books</a></li>
+    <ul>
+      <li><a href="https://www.googleapis.com/books/v1/volumes?q=turtles">Google API Example</a></li>
+    </ul>
+  </ul>
+{% endblock %}
