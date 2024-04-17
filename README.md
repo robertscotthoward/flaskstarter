@@ -15,9 +15,9 @@ Requirements:
 
 # Description
 
-This web site
+This web site has a page that allows you to search books online. It uses the Google API
 
-https://www.googleapis.com/books/v1/volumes?q=alaskan%20wolves
+Example: https://www.googleapis.com/books/v1/volumes?q=alaskan%20wolves
 
 # Usage
 
@@ -28,4 +28,4 @@ cd flaskvue
 python main.py
 ```
 
-Open
+Open http://127.0.0.1:5001 in browser
