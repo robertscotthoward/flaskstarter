@@ -1,8 +1,8 @@
-# Flask-Vue Starter Template
+# Flask Starter Template
 
-This site creates a python Flask web site that serves up an API and a Vue3/Bootstrap5 web site from the same folder and web server. Although not optimized, it has these advantages:
+This site creates a python Flask web site that serves up an API and a Bootstrap5 web site from the same folder and web server. Although not optimized, it has these advantages:
 
-* CDN references for Vue and Bootstrap used
+* CDN references for Bootstrap used
 * Node and npm is not required
 * No need to build/compile the site
 * No CORS configuration since both API and web are served from same site
@@ -23,8 +23,8 @@ Example: https://www.googleapis.com/books/v1/volumes?q=alaskan%20wolves
 
 ```
 cd SOMEFOLDER
-git clone https://github.com/robertscotthoward/flaskvue.git
-cd flaskvue
+git clone https://github.com/robertscotthoward/flaskstarter.git
+cd flaskstarter
 python main.py
 ```
 
